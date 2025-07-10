@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>InfynIQ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Example style for logout button */
+    .logout-btn {
+      background: linear-gradient(135deg, #ff9ff3, #a29bfe);
+      color: white;
+      padding: 8px 18px;
+      border: none;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.3s ease, transform 0.2s;
+    }
+
+    .logout-btn:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Infyn<span class="accent">IQ</span></div>
+    <div class="nav-links">
+      <a href="landing.html">Home</a>
+      <a href="about.html">About</a>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+
+  <!-- Start Screen -->
+  <div id="start" class="start-screen">
+    <div class="welcome-message" id="welcome-message"></div>
+    <div class="card">
+      <h1 class="title">Infyn<span class="iq">IQ</span></h1>
+      <p class="tagline">Train Your Brain, Infinitely</p>
+      <button onclick="startQuiz()" class="start-btn">Start Quiz</button>
+    </div>
+  </div>
+
+  <!-- Quiz Screen -->
+  <div id="quiz-screen" class="quiz-screen" style="display: none;">
+    <div class="card">
+      <div id="question-number" class="question-number">Question 1 of 5</div>
+      <div id="timer" class="timer">Time left: 15s</div>
+
+      <h2 id="question-text" class="question-text">What is the capital of India?</h2>
+      <div id="options-form" class="options"></div>
+      <button id="next-btn" class="next-btn" onclick="nextQuestion()">Next</button>
+    </div>
+    <div id="progress-container" style="width: 100%; background: #ddd; border-radius: 20px; height: 12px; margin: 20px 0;">
+  <div id="progress-bar" style="height: 100%; width: 0%; background: #27ae60; border-radius: 20px; transition: width 0.3s ease;"></div>
+</div>
+
+  </div>
+
+  <!-- Result Screen -->
+  <div id="result-screen" class="result-screen" style="display: none;">
+    <div class="card result-card">
+      <h2 class="result-title">Quiz Completed!</h2>
+      <p id="score-text" class="score-text">You scored 0 out of 10</p>
+      <div class="score-circle" id="score-circle">
+        <svg width="140" height="140" viewBox="0 0 120 120">
+          <defs>
+            <linearGradient id="gradient" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ff9ff3"/>
+              <stop offset="50%" stop-color="#a29bfe"/>
+              <stop offset="100%" stop-color="#74b9ff"/>
+            </linearGradient>
+          </defs>
+          <circle
+            class="background-ring"
+            cx="60"
+            cy="60"
+            r="54"
+            stroke-width="12"
+            fill="none"
+          />
+          <circle
+            class="progress-ring"
+            cx="60"
+            cy="60"
+            r="54"
+            stroke-width="12"
+            fill="none"
+            stroke-linecap="round"
+            stroke="url(#gradient)"
+            stroke-dasharray="339.292"
+            stroke-dashoffset="339.292"
+          />
+        </svg>
+        <div class="score-inside" id="score-percent">0%</div>
+      </div>
+      <button onclick="restartQuiz()" class="restart-btn">Restart Quiz</button>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

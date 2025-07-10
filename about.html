@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - InfynIQ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+   body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(255, 159, 243, 0.2);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #ff9ff3, #a29bfe, #74b9ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo .accent {
+      color: inherit;
+    }
+
+    .nav-links a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ff9ff3;
+    }
+
+    .about-container {
+      max-width: 850px;
+      margin: 80px auto;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 25px rgba(255, 159, 243, 0.15);
+    }
+
+    .about-container h1 {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      text-align: center;
+      background: linear-gradient(135deg, #ff9ff3, #a29bfe, #74b9ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+    }
+
+    .about-container p {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      text-align: justify;
+      opacity: 0.9;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 25px 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 15px rgba(255, 159, 243, 0.15);
+    }
+
+    footer p, footer small {
+      margin: 5px 0;
+      color: #aaa;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .about-container {
+        margin: 40px 15px;
+        padding: 25px;
+      }
+      .about-container h1 {
+        font-size: 2rem;
+      }
+      .about-container p {
+        font-size: 1rem;
+      }
+      .nav-links a {
+        margin-left: 12px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Infyn<span class="accent">IQ</span></div>
+    <div class="nav-links">
+      <a href="landing.html">Home</a>
+      <a href="about.html">About</a>
+    </div>
+  </nav>
+
+  <div class="about-container">
+    <h1>About InfynIQ</h1>
+    <p>
+      InfynIQ is an interactive platform designed to help you train your brain, challenge your knowledge, and have fun while learning. Our quizzes cover a wide range of topics and are designed to be engaging for learners of all ages. 
+    </p>
+    <p>
+      Whether you want to test your general knowledge, prepare for competitive exams, or just sharpen your mind, InfynIQ provides a seamless and enjoyable experience. We believe learning should be continuous, fun, and infinite — just like your potential.
+    </p>
+    <p>
+      Join us on this journey of curiosity and growth. Start your quiz today and see how far your IQ can go!
+    </p>
+  </div>
+
+  <footer>
+    <p>Email: support@infyniq.com | Phone: +1 (555) 123-4567</p>
+    <p>Address: 123 Learning Lane, Knowledge City</p>
+    <small>&copy; 2025 InfynIQ. All rights reserved.</small>
+  </footer>
+
+</body>
+</html>
