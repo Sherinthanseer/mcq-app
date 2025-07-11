@@ -6,15 +6,25 @@
   font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body, html {
-  height: 100%;
-  background: linear-gradient(135deg, #ff9ff3, #feca57, #a29bfe, #74b9ff, #55efc4);
-  background-size: 600% 600%;
-  animation: gradientBG 12s ease infinite;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* Reset + Base Styles ... (keep everything above intact) */
+
+/* -- Theme Styles -- */
+body.default-theme {
+  background: linear-gradient(135deg, #ff9ff3, #feca57, #a29bfe, #74b9ff, #55efc4) !important;
+  background-size: 600% 600% !important;
+  animation: gradientBG 12s ease infinite !important;
+  color: #fff !important;
+}
+
+body.dark-theme {
+  background: url('https://images.pexels.com/photos/572897/pexels-photo-572897.jpeg?cs=srgb&dl=pexels-eberhardgross-572897.jpg&fm=jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0 !important;
+}
+
+body.pastel-theme {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D');
+  color: #333 !important;
 }
 
 @keyframes gradientBG {
@@ -54,6 +64,7 @@ body, html {
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  margin :10px;
 }
 
 .nav-links a:hover {
@@ -111,6 +122,24 @@ body, html {
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(255, 159, 243, 0.4);
   transition: opacity 0.3s ease;
+}
+
+#create-question-btn {
+  background: linear-gradient(135deg, #ff9ff3, #a29bfe, #74b9ff);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#create-question-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
 .start-btn:hover {
@@ -289,7 +318,7 @@ body, html {
   font-weight: 600;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.2s;
-  margin-left: 5p;
+  margin-left: 10px;
 }
 .logout-btn:hover {
   opacity: 0.85;

@@ -1,15 +1,5 @@
-const questions = [
-  { id: 1, question: "What is the capital of India?", options: ["Mumbai", "New Delhi", "Chennai", "Kolkata"], answer: "New Delhi" },
-  { id: 2, question: "What does HTML stand for?", options: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks Text Markup Language", "Hyper Tool Multi Language"], answer: "Hyper Text Markup Language" },
-  { id: 3, question: "What does HTML stand for?", options: ["Hyper Text Markup Language", "Home Tool Markup Language", "Hyperlinks Text Markup Language", "Hyper Tool Multi Language"], answer: "Hyper Text Markup Language" },
-  { id: 4, question: "How many days are there in a week?", options: ["5", "6", "7", "8"], answer: "7" },
-  { id: 5, question: "Which color is a banana?", options: ["Red", "Yellow", "Green", "Blue"], answer: "Yellow" },
-  { id: 6, question: "Which animal is known as the King of the Jungle?", options: ["Elephant", "Tiger", "Lion", "Bear"], answer: "Lion" },
-  { id: 7, question: "What do we drink that comes from cows?", options: ["Juice", "Water", "Milk", "Tea"], answer: "Milk" },
-  { id: 8, question: "Which shape has three sides?", options: ["Circle", "Square", "Triangle", "Rectangle"], answer: "Triangle" },
-  { id: 9, question: "What do bees make?", options: ["Butter", "Juice", "Honey", "Milk"], answer: "Honey" },
-  { id: 10, question: "What is the color of the sky on a clear day?", options: ["Blue", "Black", "Yellow", "Pink"], answer: "Blue" },
-];
+const questions = JSON.parse(localStorage.getItem("questions")) || [];
+
 
 let currIndex = 0;
 let userAnswer = {};
@@ -227,4 +217,18 @@ function logout() {
   localStorage.removeItem("userName");
   window.location.href = "login.html";
 }
+
   
+
+// Show "Create Question" if user is admin
+document.addEventListener("DOMContentLoaded", function () {
+  const userEmail = localStorage.getItem("userEmail") || "";
+
+  if (userEmail.toLowerCase() === "admin@infyniq.com") {
+    const createBtn = document.getElementById("create-question-btn");
+    createBtn.style.display = "inline-block";
+    createBtn.onclick = function () {
+      window.location.href = "admin.html"; // Redirect to admin page
+    };
+  }
+});
